@@ -6,15 +6,39 @@ block content
     main
         section.section-techniques
             h2.heading-h2 Techniques you will learn
-            p.section-description Choose and watch the image below in order to find out more about the techniques you will learn at your lessons.
+            p.section-description.
+                Choose and watch the image below in order to find out more about the techniques you will learn at your
+                lessons.
+            div.slider
+                div.slider-for
+                    -
+                        let values = [
+                                        {'img':'slider-1', 'text':'Wheelthrowing'},
+                                        {'img':'slider-2-small', 'text':'Wheelthrowing 2'},
+                                        {'img':'slider-3-small', 'text':'Wheelthrowing 3'},
+                                        {'img':'slider-4-small', 'text':'Wheelthrowing 4'}
+                                     ];
+                    each val in values
+                        div
+                            img(class="slider-for__img" src="/assets/images/" + val.img + ".png")
+                            p= val.text
+
+                div.slider-nav
+                    each val in ['slider-1-small','slider-2-small','slider-3-small','slider-4-small']
+                        div
+                            img(class="slider-nav__img" src="/assets/images/" + val + ".png")
 
         section.section-story
             h2.heading-h2 Our story
-            p.section-description Our company was created in the 2015 year and since that time, we have been teaching people to work with clay. We work out new techniques and made a lot of people happy.
+            p.section-description.
+                Our company was created in the 2015 year and since that time, we have been teaching people to work with
+                clay. We work out new techniques and made a lot of people happy.
 
         section.section-gallery
             h2.heading-h2 Gallery
-            p.section-description With us, you will learn the art of clay and became a real professional in this sphere, because we have the best teachers and our students are always happy after the lessons.
+            p.section-description.
+                With us, you will learn the art of clay and became a real professional in this sphere, because we have
+                the best teachers and our students are always happy after the lessons.
             div#lightgallery
                 each val in ['gallery-1','gallery-2','gallery-3','gallery-4','gallery-5','gallery-6','gallery-7','gallery-8', ]
                     a(class="lg-item" href="/assets/images/" + val + ".png")
