@@ -24,3 +24,8 @@ window.addEventListener('load', () => {
   setInterval(randomColor, 8000);
 
 });
+
+lightGallery(document.getElementById('lightgallery'), {
+  plugins: [lgZoom, lgThumbnail],
+  speed: 500,
+});

@@ -55,6 +55,33 @@ gulp.task('html', () => {
     .pipe(browserSync.stream());
 });
 
+gulp.task('css', () => {
+  return gulp.src([ src_folder + '**/*.css' ], {
+    base: src_folder,
+    since: gulp.lastRun('css')
+  })
+    .pipe(gulp.dest(dist_folder))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('staticJS', () => {
+  return gulp.src([ src_folder + '**/*.js' ], {
+    base: src_folder,
+    since: gulp.lastRun('staticJS')
+  })
+      .pipe(gulp.dest(dist_folder))
+      .pipe(browserSync.stream());
+});
+
+gulp.task('fonts', () => {
+  return gulp.src([ src_folder + '**/*' ], {
+    base: src_folder,
+    since: gulp.lastRun('fonts')
+  })
+      .pipe(gulp.dest(dist_folder))
+      .pipe(browserSync.stream());
+});
+
 gulp.task('pug', () => {
   return gulp.src([ src_folder + 'pug/**/!(_)*.pug' ], {
     base: src_folder + 'pug',
@@ -147,9 +174,9 @@ gulp.task('vendor', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('build', gulp.series('clear', 'html', 'pug', 'sass', 'less', 'stylus', 'js', 'images', 'vendor'));
+gulp.task('build', gulp.series('clear', 'html', 'css', 'staticJS', 'fonts', 'pug', 'sass', 'less', 'stylus', 'js', 'images', 'vendor'));
 
-gulp.task('dev', gulp.series('html', 'pug', 'sass', 'less', 'stylus', 'js'));
+gulp.task('dev', gulp.series('html', 'css', 'staticJS', 'fonts', 'pug', 'sass', 'less', 'stylus', 'js'));
 
 gulp.task('serve', () => {
   return browserSync.init({

@@ -15,6 +15,13 @@ block content
         section.section-gallery
             h2.heading-h2 Gallery
             p.section-description With us, you will learn the art of clay and became a real professional in this sphere, because we have the best teachers and our students are always happy after the lessons.
+            div#lightgallery
+                each val in ['gallery-1','gallery-2','gallery-3','gallery-4','gallery-5','gallery-6','gallery-7','gallery-8', ]
+                    a(class="lg-item" href="/assets/images/" + val + ".png")
+                        img(class="lg-preview" src="/assets/images/" + val + ".png")
+                        div.lg-poster
+                            div.lg-icon
+                                img(src="/assets/images/search-icon.svg")
 
         section.section-plans
             h2.heading-h2 Plans
