@@ -174,9 +174,9 @@ gulp.task('vendor', () => {
     .pipe(browserSync.stream());
 });
 
-gulp.task('build', gulp.series('clear', 'html', 'css', 'staticJS', 'fonts', 'pug', 'sass', 'less', 'stylus', 'js', 'images', 'vendor'));
+gulp.task('build', gulp.series('clear', 'html', 'css', 'staticJS', 'fonts', 'pug', 'sass', 'js', 'images', 'vendor'));
 
-gulp.task('dev', gulp.series('html', 'css', 'staticJS', 'fonts', 'pug', 'sass', 'less', 'stylus', 'js'));
+gulp.task('dev', gulp.series('html', 'css', 'staticJS', 'fonts', 'pug', 'sass', 'js'));
 
 gulp.task('serve', () => {
   return browserSync.init({

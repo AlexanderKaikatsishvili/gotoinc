@@ -4,6 +4,62 @@ body
   display: flex
   flex-direction: column
 
+.mb-lg
+  margin-bottom: 1.4rem !important
+
+.mb-xl
+  margin-bottom: 2.8rem !important
+
+.container
+  max-width: 1120px
+  margin: 0 auto
+
+.row
+  display: flex
+  flex-wrap: wrap
+
+.btn-primary
+  border-radius: 5px
+  background-color: $color-malachite
+  border: 2px solid transparent
+  text-transform: uppercase
+  font-weight: bold
+  font-size: 16px
+  line-height: 16px
+  text-align: center
+  color: $color-white
+  padding: 1rem 3rem
+  cursor: pointer
+  transition: all .1s ease-in
+  &:hover
+    background-color: transparent
+    border: 2px solid $color-malachite
+    color: $color-malachite
+
+.btn-secondary
+  border-radius: 5px
+  background-color: transparent
+  border: 2px solid $color-malachite
+  text-transform: uppercase
+  font-weight: bold
+  font-size: 16px
+  line-height: 16px
+  text-align: center
+  color: $color-malachite
+  padding: 1rem 3rem
+  cursor: pointer
+  transition: all .1s ease-in
+  &:hover
+    background-color: $color-malachite
+    border: 2px solid transparent
+    color: $color-white
+
+.heading-h1
+  font-weight: bold
+  font-size: 70px
+  line-height: 108%
+  color: $color-white
+
 .heading-h2
   font-weight: bold
   font-size: 50px
@@ -11,10 +67,135 @@ body
   text-align: center
   color: $color-dark-charcoal
 
+.paragraph-t2
+  font-weight: 600
+  font-size: 18px
+  line-height: 156%
+  color: $color-cultured-t2
+
 .section-description
   text-align: center
-  max-width: 790px
-  margin: 0 auto
+  max-width: 810px
+  margin-left: auto
+  margin-right: auto
+
+.section-hero
+  background: rgba(52, 60, 74, 0.39) url("/assets/images/hero.png") 50% no-repeat
+  background-size: cover
+  background-blend-mode: overlay
+  padding: 4rem 1rem
+
+.section-story
+  background-color: $color-cultured
+  padding: 7rem 0
+
+.section-gallery
+  padding: 7rem 0 0
+
+.section-plans
+  padding: 7rem 0
+
+.card
+  text-align: center
+  padding: 3rem 2.5rem
+  margin-left: auto
+  margin-right: auto
+  max-width: 358px
+  display: flex
+  flex-direction: column
+  &-title
+    font-weight: 700
+    font-size: 24px
+    line-height: 1
+    color: $color-dark-charcoal
+    margin-bottom: 2.5rem
+  &-list
+    list-style-type: none
+    margin-bottom: 1.7rem
+    &__item
+      margin-bottom: 1rem
+      line-height: 162%
+  &--top
+    box-shadow: 0 4px 28px rgba(6, 6, 90, 0.06)
+    border-radius: 5px
+    background-color: $color-white
+
+.price
+  margin-bottom: 2.3rem
+  &__sign
+    font-weight: 600
+    font-size: 20px
+    line-height: 1
+    color: $color-dark-charcoal
+  &__term
+    font-weight: 600
+    font-size: 20px
+    line-height: 1
+    color: $color-dark-charcoal
+    margin-left: .4rem
+  &__amount
+    font-weight: 600
+    font-size: 50px
+    line-height: 1
+    color: $color-dark-charcoal
+
+.section-reviews
+  background-color: $color-cultured
+  padding: 7rem 0
+
+.review-card
+  background-color: $color-white
+  box-shadow: 0 4px 28px rgba(6, 6, 90, 0.06)
+  margin-left: 1rem
+  margin-right: 1rem
+  border-radius: 5px
+  padding: 1.8rem
+  display: flex !important
+  flex-direction: column
+  align-items: center
+  &__photo
+    width: 52px
+    height: 52px
+    border-radius: 50%
+    margin-bottom: 1.2rem
+  &__name
+    font-weight: 600
+    font-size: 18px
+    line-height: 1
+    color: $color-charcoal
+    margin-bottom: .4rem
+  &__rate
+    font-size: 22px
+    color: $color-chrome-yellow
+    margin-bottom: .8rem
+  &__place
+    font-size: 14px
+    line-height: 140%
+    color: $color-old-silver
+    margin-bottom: .4rem
+  &__comment
+    font-size: 14px
+    line-height: 140%
+    color: $color-charcoal
+    text-align: center
+    margin-bottom: 1.6rem
+  &__date
+    font-size: 12px
+    line-height: 140%
+    letter-spacing: 0.04em
+    text-transform: uppercase
+    color: $color-philippine-silver
+
+
+.form-block
+  background-color: $color-white
+  padding: 1rem
+  display: flex
+  flex-direction: column
+  max-width: 356px
+  form
+    display: flex
+    flex-direction: column
 
 .slider
   max-width: 920px
@@ -80,3 +261,6 @@ body
 
   .lg-item:hover .lg-poster > .lg-icon
     opacity: 1
+
+.section-contacts
+  padding: 7rem 0

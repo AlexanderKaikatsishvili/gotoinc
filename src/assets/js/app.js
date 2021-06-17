@@ -44,3 +44,28 @@ $('.slider-nav').slick({
   asNavFor: '.slider-for',
   focusOnSelect: true,
 });
+
+$('.reviews-slider').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  responsive: [
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+$(".review-card__rate").rate();
