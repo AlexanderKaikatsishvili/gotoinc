@@ -43,6 +43,16 @@ $('.slider-techniques-nav').slick({
   slidesToScroll: 1,
   asNavFor: '.slider-techniques-content',
   focusOnSelect: true,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    }
+  ]
 });
 
 $('.slider-story').slick({
@@ -58,9 +68,10 @@ $('.slider-story-nav').slick({
   slidesToScroll: 1,
   asNavFor: '.slider-story',
   focusOnSelect: true,
+  arrows: false,
   responsive: [
     {
-      breakpoint: 991,
+      breakpoint: 992,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -90,10 +101,33 @@ $('.reviews-slider').slick({
   dots: true,
   responsive: [
     {
-      breakpoint: 991,
+      breakpoint: 992,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+$('.card-slider').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        dots: true,
       }
     },
     {

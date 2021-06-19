@@ -92,10 +92,17 @@ body
   color: $color-cultured-t2
 
 .header
-  background-color: $color-charcoal
   display: flex
   align-items: center
-  justify-content: space-around
+  justify-content: space-between
+  padding: 1rem
+  max-width: 1332px
+  margin: 0 auto
+  &-wrapper
+    background-color: $color-charcoal
+  &-right
+    display: flex
+    align-items: center
 
 .profile
   display: flex
@@ -202,9 +209,9 @@ body
 .card
   text-align: center
   padding: 3rem 2.5rem
-  margin-left: auto
-  margin-right: auto
-  max-width: 358px
+  //margin-left: auto
+  //margin-right: auto
+  //max-width: 358px
   display: flex
   flex-direction: column
   &-title
@@ -295,6 +302,7 @@ body
   align-items: center
 .hero-block
   max-width: 620px
+  margin-right: 2rem
 
 .form-block
   background-color: $color-white
@@ -304,6 +312,7 @@ body
   display: flex
   flex-direction: column
   width: 356px
+  max-width: 100%
   &__title
     font-weight: bold
     font-size: 24px
@@ -320,6 +329,13 @@ body
       flex-direction: column
     &__input
       margin-top: .4rem
+      &--date
+        background-image: url("/assets/images/calendar-icon.svg")
+        background-position-x: 94%
+        background-position-y: 50%
+        background-repeat: no-repeat
+        padding-right: 3rem
+
 
 .slider-techniques
   max-width: 940px
@@ -499,7 +515,7 @@ body
       color: inherit
       text-decoration: underline
 
-nav
+.navigation
   ul
     list-style-type: none
     margin: 0
@@ -522,11 +538,29 @@ nav
     font-weight: 600
     font-size: 18px
 
-  li a:hover, .dropdown:hover .dropbtn
-    //background-color: red
+  .dropbtn
+    padding: 1rem 2.5rem 1rem 1.3rem
 
   li.dropdown
     display: inline-block
+
+  li.dropdown a
+    position: relative
+    &:after
+      content: ""
+      position: absolute
+      right: 1rem
+      top: 50%
+      transform: translateY(-50%) rotate(180deg)
+      width: 0
+      height: 0
+      border-left: 4px solid transparent
+      border-right: 4px solid transparent
+      border-bottom: 4px solid $color-white
+    &:hover
+      &:after
+        transform: translateY(-50%) rotate(0deg)
+
 
   .dropdown-content
     display: none
@@ -545,12 +579,21 @@ nav
     display: block
     text-align: left
     font-size: 16px
+    &:hover
+      &:after
+        content: none
 
   .dropdown-content a:hover
     background-color: $color-cultured
 
   .dropdown:hover .dropdown-content
     display: block
+
+  &--header
+    li a:hover
+      color: $color-malachite
+      &:after
+        border-bottom: 4px solid $color-malachite
 
 .search-box
   width: fit-content
@@ -601,3 +644,39 @@ nav
   border-radius: 0
   background-color: transparent
   transition: all 500ms ease-in-out
+
+//@media (max-width: 1200px)
+
+@media (max-width: 992px)
+  .hero-wrapper
+    flex-direction: column
+
+  .hero-block
+    margin-right: 0
+    margin-bottom: 4rem
+    text-align: center
+
+  #lightgallery
+    .lg-item
+      width: 50%
+
+@media (max-width: 768px)
+  .contacts-row
+    flex-direction: column
+  .map
+    width: 100%
+    margin-right: 0
+    margin-bottom: 2rem
+
+@media (max-width: 576px)
+  .heading-h1
+    font-size: 50px
+
+  .heading-h2
+    font-size: 40px
+
+  #lightgallery
+    padding: 0 1rem
+    .lg-item
+      width: 100%
+      margin: .5rem 0
