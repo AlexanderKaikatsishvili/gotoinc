@@ -4,15 +4,21 @@ body
   display: flex
   flex-direction: column
 
-.mb-lg
+.mb-md
   margin-bottom: 1.4rem !important
+
+.mb-lg
+  margin-bottom: 1.8rem !important
 
 .mb-xl
   margin-bottom: 2.8rem !important
 
 .container
-  max-width: 1120px
-  margin: 0 auto
+  max-width: 1152px
+  margin-right: auto
+  margin-left: auto
+  padding-right: 1rem
+  padding-left: 1rem
 
 .row
   display: flex
@@ -67,7 +73,7 @@ body
   color: $color-dark-charcoal
 
 .heading-h3
-  font-size: 28px
+  font-size: 24px
   line-height: 40px
   color: $color-dark-charcoal
 
@@ -353,10 +359,36 @@ body
 .section-contacts
   padding: 7rem 0
 
+.map
+  width: 75%
+  height: 364px
+  border-radius: 10px
+  overflow: hidden
+  margin-right: 4rem
+  iframe
+    width: 100%
+    height: inherit
+    border: 0
+
 .contacts
-  font-size: 18px
-  line-height: 144%
-  color: $color-black
+  p, a
+    font-size: 18px
+    line-height: 144%
+    color: $color-black
+  &__item
+    padding-left: 2.4rem
+    margin-bottom: 1.3rem
+    display: flex
+    flex-direction: column
+    &--phone
+      background: url("/assets/images/phone-icon.svg") 3px 5px no-repeat
+    &--email
+      background: url("/assets/images/email-icon.svg") 3px 5px no-repeat
+    &--location
+      background: url("/assets/images/location-icon.svg") 6px 3px no-repeat
+    &--date
+      background: url("/assets/images/calendar-icon-2.svg") 3px 6px no-repeat
+
 
 .footer
   background: rgba(52, 60, 74, 0.6) url("/assets/images/footer.png") 50% no-repeat
@@ -377,6 +409,7 @@ body
   margin: 3rem 0
   .logo
     margin-bottom: 1.3rem
+    text-align: center
 
 .social
   display: flex

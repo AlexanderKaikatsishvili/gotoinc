@@ -72,7 +72,7 @@ block content
                             input.btn-secondary(type="submit" value="Try it")
 
         section.section-techniques
-            h2.heading-h2.mb-lg Techniques you will learn
+            h2.heading-h2.mb-md Techniques you will learn
             p.section-description.mb-xl.
                 Choose and watch the image below in order to find out more about the techniques you will learn at your
                 lessons.
@@ -96,7 +96,7 @@ block content
                             img.slider-nav__img(src="/assets/images/" + val + ".png")
 
         section.section-story
-            h2.heading-h2.mb-lg Our story
+            h2.heading-h2.mb-md Our story
             p.section-description.mb-xl.
                 Our company was created in the 2015 year and since that time, we have been teaching people to work with
                 clay. We work out new techniques and made a lot of people happy.
@@ -131,20 +131,20 @@ block content
                     techniques and organized evening classes.
 
         section.section-gallery
-            h2.heading-h2.mb-lg Gallery
+            h2.heading-h2.mb-md Gallery
             p.section-description.mb-xl.
                 With us, you will learn the art of clay and became a real professional in this sphere, because we have
                 the best teachers and our students are always happy after the lessons.
             div#lightgallery
                 each val in ['gallery-1','gallery-2','gallery-3','gallery-4','gallery-5','gallery-6','gallery-7','gallery-8', ]
-                    a(class="lg-item" href="/assets/images/" + val + ".png")
-                        img(class="lg-preview" src="/assets/images/" + val + ".png")
+                    a.lg-item(href="/assets/images/" + val + ".png")
+                        img.lg-preview(src="/assets/images/" + val + ".png")
                         div.lg-poster
                             div.lg-icon
                                 img(src="/assets/images/search-icon.svg")
 
         section.section-plans
-            h2.heading-h2.mb-lg Plans
+            h2.heading-h2.mb-md Plans
             p.section-description.mb-xl Choose your plan and let’s make beauty together. Our classes are taught by top practitioners.
             div.container
                 div.row
@@ -200,7 +200,7 @@ block content
                         button.btn-primary BUY IT NOW
 
         section.section-reviews
-            h2.heading-h2.mb-lg Reviews
+            h2.heading-h2.mb-md Reviews
             p.section-description.mb-xl Our clients always stay very happy, just read their reviews below.
             div.container
                 div.reviews-slider
@@ -261,24 +261,26 @@ block content
 
 
         section.section-contacts
-            h2.heading-h2 Contacts
+            h2.heading-h2.mb-xl Contacts
             div.container
                 div.row
                     div.map
-                        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81462.71443983103!2d-73.99265935423104!3d40.64363609982279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c244b30adc86b5%3A0x6d367509a2f0fed6!2zMjkwMSBCZWRmb3JkIEF2ZSwgQnJvb2tseW4sIE5ZIDExMjEwLCDQodCo0JA!5e0!3m2!1sru!2sua!4v1623764502201!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy")
+                        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81462.71443983103!2d-73.99265935423104!3d40.64363609982279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c244b30adc86b5%3A0x6d367509a2f0fed6!2zMjkwMSBCZWRmb3JkIEF2ZSwgQnJvb2tseW4sIE5ZIDExMjEwLCDQodCo0JA!5e0!3m2!1sru!2sua!4v1623764502201!5m2!1sru!2sua" allowfullscreen="" loading="lazy")
                     div.contacts
-                        h3.heading-h3 Our office:
-                        a (718) 951-5065
-                        a (718) 951-5055
-                        a art.clay@gmail.com
-                        p.
-                            Art Clay Company
-                            2901 Bedford Avenue
-                            Brooklyn, NY 11210
-                            P: 718.951.5000
-                        p.
-                            Monday - Friday
-                            09:00 - 18:00
+                        h3.heading-h3.mb-lg Our office:
+                        div.contacts__item.contacts__item--phone
+                            a(href="tel:+3809515065") (718) 951-5065
+                            a(href="tel:+3809515055") (718) 951-5055
+                        div.contacts__item.contacts__item--email
+                            a(href="mailto:art.clay@gmail.com") art.clay@gmail.com
+                        div.contacts__item.contacts__item--location
+                            p Art Clay Company
+                            p 2901 Bedford Avenue
+                            p Brooklyn, NY 11210
+                            p P: 718.951.5000
+                        div.contacts__item.contacts__item--date
+                            p Monday - Friday
+                            p 09:00 - 18:00
 
         //include sections/section-hero
         //include sections/section-techniques
