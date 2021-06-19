@@ -30,18 +30,18 @@ lightGallery(document.getElementById('lightgallery'), {
   speed: 500,
 });
 
-$('.slider-for').slick({
+$('.slider-techniques-content').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
   fade: true,
-  asNavFor: '.slider-nav'
+  asNavFor: '.slider-techniques-nav'
 });
 
-$('.slider-nav').slick({
+$('.slider-techniques-nav').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
-  asNavFor: '.slider-for',
+  asNavFor: '.slider-techniques-content',
   focusOnSelect: true,
 });
 
