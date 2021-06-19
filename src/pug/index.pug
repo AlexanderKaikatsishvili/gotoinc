@@ -53,12 +53,12 @@ block content
             div.container
                 div.row.hero-wrapper
                     div.hero-block
-                        h1.heading-h1.mb-lg Clay lessons <br> from professionals
-                        p.paragraph-t2.mb-xl.
+                        h1.heading-h1.mb-lg(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out") Clay lessons <br> from professionals
+                        p.paragraph-t2.mb-xl(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out").
                             Our professionals will teach you how to make beauty from clay. We’re the pros in our business and know everything
                             about what we do. You will get unforgettable emotions, working with us. We have the newest equipment and the best
                             teachers, who has a masters degree in it.
-                        button.btn-primary Choose a plan
+                        button.btn-primary(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="1000" data-aos-easing="ease-in-out") Choose a plan
                     div.form-block
                         p.form-block__title Try unlimited one-day clay - only $50
                         form.form(action="")
@@ -74,11 +74,12 @@ block content
                             input.btn-secondary.mt-md(type="submit" value="Try it")
 
         section.section-techniques
-            h2.heading-h2.mb-md Techniques you will learn
-            p.section-description.mb-xl.
-                Choose and watch the image below in order to find out more about the techniques you will learn at your
-                lessons.
-            div.slider-techniques
+            div.heading-block(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out")
+                h2.heading-h2.mb-md Techniques you will learn
+                p.section-description.mb-xl.
+                    Choose and watch the image below in order to find out more about the techniques you will learn at your
+                    lessons.
+            div.slider-techniques(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
                 div.slider-techniques-content
                     -
                         let values = [
@@ -98,11 +99,12 @@ block content
                             img.slider-techniques-nav__img(src="/assets/images/" + val + ".png")
 
         section.section-story
-            h2.heading-h2.mb-md Our story
-            p.section-description.mb-xl.
-                Our company was created in the 2015 year and since that time, we have been teaching people to work with
-                clay. We work out new techniques and made a lot of people happy.
-            div.slider-story-nav
+            div.heading-block(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out")
+                h2.heading-h2.mb-md Our story
+                p.section-description.mb-xl.
+                    Our company was created in the 2015 year and since that time, we have been teaching people to work with
+                    clay. We work out new techniques and made a lot of people happy.
+            div.slider-story-nav(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
                 div.slider-story-nav__item 2015
                     div.circle
                 div.slider-story-nav__item 2016
@@ -114,7 +116,7 @@ block content
                 div.slider-story-nav__item 2019
                     div.circle
 
-            div.slider-story
+            div.slider-story(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
                 div.story-block.
                     In 2015 our company became bigger, we had hired 3 new teachers.
                 div.story-block.
@@ -133,11 +135,12 @@ block content
                     techniques and organized evening classes.
 
         section.section-gallery
-            h2.heading-h2.mb-md Gallery
-            p.section-description.mb-xl.
-                With us, you will learn the art of clay and became a real professional in this sphere, because we have
-                the best teachers and our students are always happy after the lessons.
-            div#lightgallery
+            div.heading-block(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out")
+                h2.heading-h2.mb-md Gallery
+                p.section-description.mb-xl.
+                    With us, you will learn the art of clay and became a real professional in this sphere, because we have
+                    the best teachers and our students are always happy after the lessons.
+            div#lightgallery(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
                 each val in ['gallery-1','gallery-2','gallery-3','gallery-4','gallery-5','gallery-6','gallery-7','gallery-8', ]
                     a.lg-item(href="/assets/images/" + val + ".png")
                         img.lg-preview(src="/assets/images/" + val + ".png")
@@ -146,9 +149,10 @@ block content
                                 img(src="/assets/images/search-icon.svg")
 
         section.section-plans
-            h2.heading-h2.mb-md Plans
-            p.section-description.mb-xl Choose your plan and let’s make beauty together. Our classes are taught by top practitioners.
-            div.container
+            div.heading-block(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out")
+                h2.heading-h2.mb-md Plans
+                p.section-description.mb-xl Choose your plan and let’s make beauty together. Our classes are taught by top practitioners.
+            div.container(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
                 div.card-slider
                     div.card
                         p.card-title Basic
@@ -202,9 +206,10 @@ block content
                         button.btn-primary BUY IT NOW
 
         section.section-reviews
-            h2.heading-h2.mb-md Reviews
-            p.section-description.mb-xl Our clients always stay very happy, just read their reviews below.
-            div.container
+            div.heading-block(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out")
+                h2.heading-h2.mb-md Reviews
+                p.section-description.mb-xl Our clients always stay very happy, just read their reviews below.
+            div.container(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
                 div.reviews-slider
                     div.review-card
                         div.review-card__photo
@@ -263,8 +268,9 @@ block content
 
 
         section.section-contacts
-            h2.heading-h2.mb-xl Contacts
-            div.container
+            div.heading-block(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out")
+                h2.heading-h2.mb-xl Contacts
+            div.container(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
                 div.row.contacts-row
                     div.map
                         iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81462.71443983103!2d-73.99265935423104!3d40.64363609982279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c244b30adc86b5%3A0x6d367509a2f0fed6!2zMjkwMSBCZWRmb3JkIEF2ZSwgQnJvb2tseW4sIE5ZIDExMjEwLCDQodCo0JA!5e0!3m2!1sru!2sua!4v1623764502201!5m2!1sru!2sua" allowfullscreen="" loading="lazy")

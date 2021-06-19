@@ -141,3 +141,5 @@ $('.card-slider').slick({
 });
 
 $(".review-card__rate").rate();
+
+AOS.init();
