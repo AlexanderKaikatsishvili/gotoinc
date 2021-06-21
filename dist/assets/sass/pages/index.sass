@@ -1,0 +1,817 @@
+@import '../_includes'
+
+
+/* HEADER start */
+
+.logo
+  display: flex
+  justify-content: center
+
+// Header styles
+
+.header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 1.3rem 1rem
+  max-width: 1332px
+  margin: 0 auto
+
+  &-wrapper
+    background-color: $color-charcoal
+
+  &-right
+    display: flex
+    align-items: center
+
+.profile
+  display: flex
+  align-items: center
+
+  &__name
+    font-weight: 600
+    font-size: 1.125rem
+    color: $color-white
+
+  &__img
+    width: 28px
+    height: 28px
+    border-radius: 50%
+    margin-left: 1rem
+
+.search-box
+  width: fit-content
+  height: fit-content
+  position: relative
+  margin-right: 1.5rem
+
+.input-wrapper
+  display: none
+  background-color: #fff
+  box-shadow: 0 4px 28px rgba(6, 6, 90, 0.06)
+  position: absolute
+  right: 0
+  z-index: 1500
+  border-radius: 5px
+  padding: 3rem 2.4rem
+
+.input-search
+  width: 200px
+  background-color: #f8f8f8
+
+.btn-search
+  width: 3.125rem
+  height: 3.125rem
+  border-style: none
+  font-size: 1.25rem
+  font-weight: bold
+  outline: none
+  cursor: pointer
+  border-radius: 50%
+  color: #000
+  background-color: transparent
+  pointer-events: painted
+
+// Navigation styles
+
+.nav
+  list-style-type: none
+  margin: 0
+  padding: 0
+  overflow: hidden
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+
+  &__list
+    float: left
+
+  &__link,
+  .nav__link-dropdown
+    display: inline-block
+    color: $color-white
+    text-align: center
+    padding: 1rem 1.3rem
+    text-decoration: none
+    font-weight: 600
+    font-size: 1.125rem
+
+  &__list.nav__dropdown
+    display: inline-block
+
+    .nav__link-dropdown
+      padding: 1rem 2.5rem 1rem 1.3rem
+      position: relative
+      &:after
+        content: ""
+        position: absolute
+        right: 1rem
+        top: 50%
+        transform: translateY(-50%) rotate(180deg)
+        width: 0
+        height: 0
+        border-left: 4px solid transparent
+        border-right: 4px solid transparent
+        border-bottom: 4px solid $color-white
+
+
+  .nav__dropdown--active
+    .nav__link-dropdown
+      &:after
+        transform: translateY(-50%) rotate(0deg)
+        border-bottom: 4px solid $color-malachite
+
+
+  .nav__dropdown-content
+    display: none
+    position: absolute
+    background-color: $color-white
+    min-width: 160px
+    z-index: 1
+    box-shadow: 0 4px 28px rgba(6, 6, 90, 0.06)
+    border-radius: 5px
+    overflow: hidden
+    .nav__link
+      color: $color-dark-charcoal
+      padding: 1rem 1.3rem
+      text-decoration: none
+      display: block
+      text-align: left
+      font-size: 1rem
+
+      &:after
+        content: none
+
+      &:hover
+        background-color: $color-cultured
+        &:after
+          content: none
+
+  .nav__dropdown:hover
+    .nav__dropdown-content
+      display: block
+
+  &--header
+    .nav__list
+      .nav__link:hover
+        color: $color-malachite
+
+  .nav__link-dropdown
+    &--active
+      color: $color-malachite
+
+  &--mobile
+    display: none
+    position: fixed
+    top: 82px
+    left: 0
+    width: 100%
+    background-color: $color-charcoal
+    padding: 0
+    z-index: 1000
+    flex-direction: column
+    align-items: initial
+    .nav__link
+      &:hover
+        background-color: $color-dark-charcoal
+
+    .nav__dropdown-content
+      position: initial
+      display: block
+      background-color: inherit
+      min-width: unset
+      z-index: 1
+      box-shadow: unset
+      border-radius: unset
+      overflow: hidden
+      padding-left: 2rem
+
+      .nav__link
+        color: $color-white
+
+        &:hover
+          background-color: $color-dark-charcoal
+
+    &-active
+      display: flex
+
+      .nav__list.nav__dropdown
+        .nav__link
+          position: relative
+
+          &:after
+            content: none
+
+.nav-icon
+  width: 40px
+  height: 1.5rem
+  position: relative
+  transform: rotate(0deg)
+  transition: .5s ease-in-out
+  cursor: pointer
+  display: none
+
+  span
+    display: block
+    position: absolute
+    height: 4px
+    width: 100%
+    background: $color-malachite
+    border-radius: 9px
+    opacity: 1
+    left: 0
+    transform: rotate(0deg)
+    transition: .25s ease-in-out
+
+.nav-icon span:nth-child(1)
+  top: 0
+
+.nav-icon span:nth-child(2),
+.nav-icon span:nth-child(3)
+  top: 10px
+
+.nav-icon span:nth-child(4)
+  top: 1.25rem
+
+.nav-icon.open span:nth-child(1)
+  top: 10px
+  width: 0%
+  left: 50%
+
+.nav-icon.open span:nth-child(2)
+  transform: rotate(45deg)
+
+.nav-icon.open span:nth-child(3)
+  transform: rotate(-45deg)
+
+.nav-icon.open span:nth-child(4)
+  top: 10px
+  width: 0%
+  left: 50%
+
+
+
+//.btn-search:focus ~ .input-search
+//  width: 200px
+//  border-radius: 0
+//  background-color: transparent
+//  transition: all 500ms ease-in-out
+//
+//.input-search:focus
+//  width: 200px
+//  border-radius: 0
+//  background-color: transparent
+//  transition: all 500ms ease-in-out
+
+/* HEADER end */
+
+
+/* SECTION HERO */
+
+.row-hero
+  justify-content: space-between
+  align-items: center
+
+.hero-block
+  max-width: 620px
+  margin-right: 2rem
+
+.section-description
+  text-align: center
+  max-width: 810px
+  margin-left: auto
+  margin-right: auto
+
+.section-hero
+  background: url("/assets/images/hero.png") 50% no-repeat
+  background-size: cover
+  padding: 4rem 0
+  position: relative
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(52, 60, 74, 0.39)
+
+
+/* SECTION TECHNIQUES */
+
+.section-techniques
+  padding: 7rem 0
+
+.slider-techniques
+  max-width: 972px
+  margin: 0 auto
+  padding-left: 1rem
+  padding-right: 1rem
+
+  &-content
+    &__item
+      margin-left: .6rem
+      margin-right: .6rem
+
+    &__img
+      object-fit: cover
+      object-position: center
+      max-width: unset
+      width: 100%
+      height: 520px
+      border-radius: 5px
+
+    &__title
+      font-weight: bold
+      font-size: 1.25rem
+      line-height: 150%
+      text-align: center
+      color: #333333
+      margin: 1.5rem 0 1.7rem
+
+  &-nav
+    &__item
+      margin-left: .6rem
+      margin-right: .6rem
+      border-radius: 5px
+      overflow: hidden
+      height: 118px
+      cursor: pointer
+      position: relative
+
+      &:before
+        content: ""
+        display: block
+        position: absolute
+        background: rgba(52, 60, 74, 0.6)
+        width: 100%
+        height: 100%
+
+      &.slick-current
+        &:before
+          content: unset
+
+    &__img
+      object-fit: cover
+      object-position: center
+      max-width: unset
+      width: 100%
+      height: inherit
+
+
+/* SECTION STORY */
+
+.section-story
+  background-color: $color-cultured
+  padding: 7rem 0
+
+.slider-story
+  max-width: 578px
+  margin: 2rem auto 0
+  padding-left: 1rem
+  padding-right: 1rem
+  &__item
+    box-shadow: 0 4px 28px rgba(6, 6, 90, 0.06)
+    background-color: $color-white
+    border-radius: 10px
+    text-align: center
+    font-size: 1rem
+    line-height: 163%
+    padding: 2.6rem 2.9rem
+
+.slider-story-nav
+  position: relative
+  max-width: 1140px
+  margin: 2rem auto
+
+  &__item
+    font-weight: 600
+    font-size: 1.25rem
+    color: $color-black
+
+  .circle
+    width: .75rem
+    height: .75rem
+    background-color: $color-malachite
+    border-radius: 50%
+    margin-top: 40px
+    position: relative
+
+  .slick-slide
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-bottom: 40px
+    cursor: pointer
+
+    &.slick-current
+      color: $color-malachite
+
+      .circle
+        &:after
+          content: ""
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          border-radius: 50%
+          display: block
+          width: 3.125rem
+          height: 3.125rem
+          background: rgba(0, 208, 83, 0.2)
+
+  &:after
+    content: ""
+    display: block
+    position: absolute
+    bottom: 45px
+    height: 2px
+    width: 100%
+    margin-top: 2rem
+    background: radial-gradient(50% 50% at 50% 50%, #00D053 0%, rgba(0, 208, 83, 0.09) 100%)
+
+
+/* SECTION GALLERY */
+
+.section-gallery
+  padding: 7rem 0 0
+
+.gallery
+  display: flex
+  flex-wrap: wrap
+
+  &__preview
+    object-fit: cover
+    object-position: center
+    max-width: unset
+    width: 100%
+    height: inherit
+
+  &__poster
+    background-color: rgba(0, 0, 0, 0.1)
+    bottom: 0
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+    -webkit-transition: background-color 0.15s ease 0s
+    -o-transition: background-color 0.15s ease 0s
+    transition: background-color 0.15s ease 0s
+
+  &__icon
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    opacity: 0
+    position: absolute
+    top: 50%
+    -webkit-transition: opacity 0.3s ease 0s
+    -o-transition: opacity 0.3s ease 0s
+    transition: opacity 0.3s ease 0s
+    border-radius: 50%
+    height: 64px
+    width: 64px
+    background: $color-malachite
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &__item
+    width: 25%
+    height: 290px
+    overflow: hidden
+    position: relative
+
+    &:hover
+      .gallery__poster
+        background-color: rgba(52, 60, 74, 0.6)
+
+        & > .gallery__icon
+          opacity: 1
+
+
+/* SECTION PLANS */
+
+.section-plans
+  padding: 7rem 0
+
+.card
+  text-align: center
+  padding: 2.9rem 2.5rem
+  margin: 1rem 0 1.5rem
+  display: flex
+  flex-direction: column
+
+  &-title
+    font-weight: 700
+    font-size: 1.5rem
+    line-height: 1
+    color: $color-dark-charcoal
+    margin-bottom: 2.5rem
+
+  &-list
+    list-style-type: none
+    margin-bottom: 1.7rem
+
+    &__item
+      margin-bottom: 1rem
+      line-height: 162%
+
+  &--featured
+    box-shadow: 0 4px 28px rgba(6, 6, 90, 0.06)
+    border-radius: 5px
+    background-color: $color-white
+
+.price
+  margin-bottom: 2.3rem
+  display: flex
+  justify-content: center
+
+  &__sign
+    font-weight: 600
+    font-size: 1.25rem
+    line-height: 1
+    color: $color-dark-charcoal
+    margin-right: .2rem
+
+  &__term
+    font-weight: 600
+    font-size: 1.25rem
+    line-height: 1
+    color: $color-dark-charcoal
+    margin-left: .4rem
+    align-self: flex-end
+    margin-bottom: 0.5rem
+
+  &__amount
+    font-weight: 600
+    font-size: 3.125rem
+    line-height: 1
+    color: $color-dark-charcoal
+
+
+/* SECTION REVIEWS */
+
+.section-reviews
+  background-color: $color-cultured
+  padding: 7rem 0
+
+.review-card
+  background-color: $color-white
+  box-shadow: 0 4px 28px rgba(6, 6, 90, 0.06)
+  margin: 1rem .8rem 1.5rem
+  border-radius: 5px
+  padding: 1.8rem
+  display: flex !important
+  flex-direction: column
+  align-items: center
+
+  &__photo
+    width: 52px
+    height: 52px
+    border-radius: 50%
+    margin-bottom: 1.2rem
+
+  &__name
+    font-weight: 600
+    font-size: 1.125rem
+    line-height: 1
+    color: $color-charcoal
+    margin-bottom: .4rem
+
+  &__rate
+    font-size: 1.375rem
+    color: $color-chrome-yellow
+    margin-bottom: .8rem
+
+  &__place
+    font-size: 0.875rem
+    line-height: 140%
+    color: $color-old-silver
+    margin-bottom: .4rem
+
+  &__comment
+    font-size: 0.875rem
+    line-height: 140%
+    color: $color-charcoal
+    text-align: center
+    margin-bottom: 1.6rem
+
+  &__date
+    font-size: .75rem
+    line-height: 140%
+    letter-spacing: 0.04em
+    text-transform: uppercase
+    color: $color-philippine-silver
+
+
+/* SECTION CONTACTS */
+
+.section-contacts
+  padding: 7rem 0
+
+.contacts-map
+  width: 75%
+  height: 364px
+  border-radius: 10px
+  overflow: hidden
+  margin-right: 4rem
+
+  &__frame
+    width: 100%
+    height: inherit
+    border: 0
+
+.contacts
+  &__item
+    padding-left: 2.4rem
+    margin-bottom: 1.3rem
+    display: flex
+    flex-direction: column
+    min-width: 2.75rem
+
+    &--phone
+      background: url("/assets/images/phone-icon.svg") 3px 5px no-repeat
+
+    &--email
+      background: url("/assets/images/email-icon.svg") 3px 5px no-repeat
+
+    &--location
+      background: url("/assets/images/location-icon.svg") 6px 3px no-repeat
+
+    &--date
+      background: url("/assets/images/calendar-icon-2.svg") 3px 6px no-repeat
+
+  p, a
+    font-size: 1.125rem
+    line-height: 144%
+    color: $color-black
+
+
+/* FOOTER */
+
+.footer
+  background: url("/assets/images/footer.png") 50% no-repeat
+  background-blend-mode: overlay
+  background-size: cover
+  color: $color-white
+  padding: 2.3rem 1rem
+  position: relative
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(52, 60, 74, 0.39)
+
+  &-wrapper
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.brand-block
+  display: flex
+  flex-direction: column
+  justify-content: center
+  margin: 3rem 0
+
+  .logo
+    margin-bottom: 1.3rem
+    text-align: center
+
+.social
+  display: flex
+  justify-content: space-between
+  width: 140px
+
+.copyrights
+  &__copy
+    font-size: .75rem
+    color: $color-white
+    text-align: center
+    margin-bottom: .5rem
+
+  &__description
+    font-size: .75rem
+    color: $color-white
+    text-align: center
+
+    a
+      color: inherit
+      text-decoration: underline
+
+
+.form-block
+  background-color: $color-white
+  box-shadow: 0 4px 28px rgba(6, 6, 90, 0.06)
+  border-radius: 5px
+  padding: 3rem 2.4rem
+  display: flex
+  flex-direction: column
+  width: 356px
+  max-width: 100%
+
+  &__title
+    font-weight: bold
+    font-size: 1.5rem
+    line-height: 142%
+    text-align: center
+    color: #333333
+    margin-bottom: 2rem
+
+  .form
+    display: flex
+    flex-direction: column
+
+    &__label
+      margin-bottom: 1.2rem
+      display: flex
+      flex-direction: column
+
+    &__input
+      margin-top: .4rem
+
+      &--date
+        background-image: url("/assets/images/calendar-icon.svg")
+        background-position-x: 94%
+        background-position-y: 50%
+        background-repeat: no-repeat
+        padding-right: 3rem
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 992px)
+  .nav--header
+    display: none
+
+  .nav--mobile
+    .nav__link
+      width: 100%
+      text-align: left
+
+  .nav-icon
+    display: block
+
+  .row-hero
+    flex-direction: column
+
+  .hero-block
+    margin-right: 0
+    margin-bottom: 4rem
+    text-align: center
+
+  .gallery
+    &__item
+      width: 50%
+
+  .card
+    margin: 1rem 1.5rem 1.5rem
+
+@media (max-width: 768px)
+  .row-contacts
+    flex-direction: column
+  .contacts-map
+    width: 100%
+    margin-right: 0
+    margin-bottom: 2rem
+  .review-card
+    margin: 1.5rem
+
+  .nav--footer
+    display: grid
+    grid-template-columns: 1fr 1fr
+
+@media (max-width: 576px)
+  .card
+    padding: 2.9rem 1rem
+
+  .heading-h1
+    font-size: 2.8rem
+
+  .heading-h2
+    font-size: 40px
+
+  .gallery
+    padding: 0 1rem
+
+    &__item
+      width: 100%
+      margin: .5rem 0
+
+  .header-right
+    display: none
+
+  .nav--mobile
+    top: 66px
+
+@media (max-width: 360px)
+  .nav--footer
+    grid-template-columns: 1fr
+
+

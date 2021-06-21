@@ -1,0 +1,15 @@
+section.section-gallery#section-gallery
+
+    div.heading-block(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out")
+        h2.heading-h2.mb-md Gallery
+        p.section-description.mb-xl.
+            With us, you will learn the art of clay and became a real professional in this sphere, because we have
+            the best teachers and our students are always happy after the lessons.
+
+    div.gallery#gallery(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
+        each val in ['gallery-1','gallery-2','gallery-3','gallery-4','gallery-5','gallery-6','gallery-7','gallery-8', ]
+            a.gallery__item(href="/assets/images/" + val + ".png")
+                img.gallery__preview(src="/assets/images/" + val + ".png")
+                div.gallery__poster
+                    div.gallery__icon
+                        img(src="/assets/images/search-icon.svg")

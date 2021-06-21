@@ -1,0 +1,26 @@
+section.section-techniques#section-techniques
+
+    div.heading-block(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out")
+        h2.heading-h2.mb-md Techniques you will learn
+        p.section-description.mb-xl.
+            Choose and watch the image below in order to find out more about the techniques you will learn at your
+            lessons.
+
+    div.slider-techniques(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
+        div.slider-techniques-content
+            -
+                let values = [
+                    {'img': 'slider-1', 'text': 'Wheelthrowing'},
+                    {'img': 'slider-2-small', 'text': 'Wheelthrowing 2'},
+                    {'img': 'slider-3-small', 'text': 'Wheelthrowing 3'},
+                    {'img': 'slider-4-small', 'text': 'Wheelthrowing 4'}
+                ];
+            each val in values
+                div.slider-techniques-content__item
+                    img.slider-techniques-content__img(src="/assets/images/" + val.img + ".png")
+                    p.slider-techniques-content__title= val.text
+
+        div.slider-techniques-nav
+            each val in ['slider-1-small','slider-2-small','slider-3-small','slider-4-small']
+                div.slider-techniques-nav__item
+                    img.slider-techniques-nav__img(src="/assets/images/" + val + ".png")

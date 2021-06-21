@@ -1,0 +1,62 @@
+section.section-reviews#section-reviews
+
+    div.heading-block(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-easing="ease-in-out")
+        h2.heading-h2.mb-md Reviews
+        p.section-description.mb-xl Our clients always stay very happy, just read their reviews below.
+
+    div.container(data-aos="fade-up" data-aos-once="true" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out")
+
+        div.reviews-slider
+            -
+                let reviewsData = [
+                    {
+                        'img': 'person-2',
+                        'name': 'Angela Mortensen',
+                        'place': 'New York, NY',
+                        'rate': '5',
+                        'comment': 'It was the most exciting lessons in my life I’m so grateful to the Art Clay for their service and professionalism! Thanks!',
+                        'date': '01 may 2019',
+                    },
+                    {
+                        'img': 'person-3',
+                        'name': 'Dilan Mason',
+                        'place': 'New York, NY',
+                        'rate': '4.5',
+                        'comment': 'I am completely satisfied with the service. Good! I’m happy right now! I highly recommend it! For me, it was the best lessons ever!',
+                        'date': '20 apr 2019',
+                    },
+                    {
+                        'img': 'person-4',
+                        'name': 'Amanda Berkley',
+                        'place': 'New York, NY',
+                        'rate': '5',
+                        'comment': 'Cool school! Cool lessons and teachers! It was the best time ever! I highly recommend it! You will become a professional!',
+                        'date': '12 mar 2019',
+                    },
+                    {
+                        'img': 'person-2',
+                        'name': 'Angela Mortensen',
+                        'place': 'New York, NY',
+                        'rate': '5',
+                        'comment': 'It was the most exciting lessons in my life I’m so grateful to the Art Clay for their service and professionalism! Thanks!',
+                        'date': '01 may 2019',
+                    },
+                    {
+                        'img': 'person-3',
+                        'name': 'Dilan Mason',
+                        'place': 'New York, NY',
+                        'rate': '4.5',
+                        'comment': 'I am completely satisfied with the service. Good! I’m happy right now! I highly recommend it! For me, it was the best lessons ever!',
+                        'date': '20 apr 2019',
+                    },
+                ];
+            each val in reviewsData
+
+                div.review-card
+                    div.review-card__photo
+                        img(src="/assets/images/" + val.img + ".png")
+                    div.review-card__name= val.name
+                    div.review-card__place= val.place
+                    div(data-rate-value=val.rate).review-card__rate
+                    div.review-card__comment= val.comment
+                    div.review-card__date= val.date
