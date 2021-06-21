@@ -150,3 +150,18 @@ $('a[href*="#"]').on('click', function(e) {
   }, 500);
   e.preventDefault();
 });
+
+//Mobile menu class toggle
+$('.nav-icon').click(function() {
+  $(this).toggleClass('open');
+  $('.navigation--mobile').toggleClass('navigation--mobile--open');
+});
+
+$(window).on('resize', function() {
+  var win = $(this);
+  if (win.width() > 992) {
+    if ($(".navigation--mobile").hasClass("navigation--mobile--open")) {
+      $(".navigation--mobile").removeClass("navigation--mobile--open");
+    }
+  }
+});
