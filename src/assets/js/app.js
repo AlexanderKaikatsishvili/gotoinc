@@ -155,14 +155,14 @@ $('a[href*="#"]').on('click', function(e) {
 //Mobile menu class toggle
 $('.nav-icon').click(function() {
   $(this).toggleClass('open');
-  $('.navigation--mobile').toggleClass('navigation--mobile--open');
+  $('.nav--mobile').toggleClass('nav--mobile--open');
 });
 
 $(window).on('resize', function() {
   var win = $(this);
   if (win.width() > 992) {
-    if ($(".navigation--mobile").hasClass("navigation--mobile--open")) {
-      $(".navigation--mobile").removeClass("navigation--mobile--open");
+    if ($(".nav--mobile").hasClass("nav--mobile--open")) {
+      $(".nav--mobile").removeClass("nav--mobile--open");
     }
   }
 });

@@ -3,21 +3,20 @@
 
 /* HEADER start */
 
-.navigation
-  ul
-    list-style-type: none
-    margin: 0
-    padding: 0
-    overflow: hidden
-    display: flex
-    flex-wrap: wrap
-    justify-content: center
-    align-items: center
+.nav
+  list-style-type: none
+  margin: 0
+  padding: 0
+  overflow: hidden
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
 
-  li
+  &__list
     float: left
 
-  li a, .dropbtn
+  &__link, .nav__link-drop
     display: inline-block
     color: $color-white
     text-align: center
@@ -26,13 +25,13 @@
     font-weight: 600
     font-size: 1.125rem
 
-  .dropbtn
+  .nav__link-dropdown
     padding: 1rem 2.5rem 1rem 1.3rem
 
-  li.dropdown
+  &__list.nav__dropdown
     display: inline-block
 
-  li.dropdown a
+  &__list.nav__dropdown a
     position: relative
 
     &:after
@@ -52,7 +51,7 @@
         transform: translateY(-50%) rotate(0deg)
 
 
-  .dropdown-content
+  .nav__dropdown-content
     display: none
     position: absolute
     background-color: $color-white
@@ -62,7 +61,7 @@
     border-radius: 5px
     overflow: hidden
 
-  .dropdown-content a
+  .nav__dropdown-content a
     color: $color-dark-charcoal
     padding: 1rem 1.3rem
     text-decoration: none
@@ -74,10 +73,10 @@
       &:after
         content: none
 
-  .dropdown-content a:hover
+  .nav__dropdown-content a:hover
     background-color: $color-cultured
 
-  .dropdown:hover .dropdown-content
+  .nav__dropdown:hover .nav__dropdown-content
     display: block
 
   &--header
@@ -96,12 +95,10 @@
     background-color: $color-charcoal
     padding: 0
     z-index: 1000
+    flex-direction: column
+    align-items: initial
 
-    ul
-      flex-direction: column
-      align-items: initial
-
-    .dropdown-content
+    .nav__dropdown-content
       position: initial
       display: block
       background-color: inherit
@@ -119,7 +116,7 @@
           background-color: inherit
 
     &--open
-      display: block
+      display: flex
 
     li.dropdown a
       position: relative
@@ -129,6 +126,7 @@
 
 .logo
   display: flex
+  justify-content: center
 
 .nav-icon
   width: 40px
@@ -262,7 +260,7 @@
   align-items: center
 
 .hero-block
-  max-width: 61.25rem
+  max-width: 620px
   margin-right: 2rem
 
 .section-description
@@ -662,7 +660,7 @@
     justify-content: center
     align-items: center
 
-.brand
+.brand-block
   display: flex
   flex-direction: column
   justify-content: center
@@ -732,8 +730,10 @@
         padding-right: 3rem
 
 
+/* MEDIA QUERIES */
+
 @media (max-width: 992px)
-  .navigation--header
+  .nav--header
     display: none
 
   .nav-icon
@@ -764,6 +764,10 @@
   .review-card
     margin: 1.5rem
 
+  .nav--footer
+    display: grid
+    grid-template-columns: 1fr 1fr
+
 @media (max-width: 576px)
   .heading-h1
     font-size: 3.125rem
@@ -777,3 +781,7 @@
     &__item
       width: 100%
       margin: .5rem 0
+
+@media (max-width: 360px)
+  .nav--footer
+    grid-template-columns: 1fr
