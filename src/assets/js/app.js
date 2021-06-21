@@ -25,10 +25,26 @@ window.addEventListener('load', () => {
 
 });
 
+
+// Light gallery initialisation
+
 lightGallery(document.getElementById('gallery'), {
   plugins: [lgZoom, lgThumbnail],
   speed: 500,
 });
+
+
+// AOS animation plugin initialisation
+
+AOS.init();
+
+
+// Star rating plugin initialisation
+
+$(".review-card__rate").rate();
+
+
+// Slick slider initialisations
 
 $('.slider-techniques-content').slick({
   slidesToShow: 1,
@@ -141,9 +157,8 @@ $('.plans-slider').slick({
   ]
 });
 
-$(".review-card__rate").rate();
 
-AOS.init();
+// Smooth section scroll
 
 $('a[href*="#"]').on('click', function(e) {
   $('html,body').animate({
@@ -152,21 +167,26 @@ $('a[href*="#"]').on('click', function(e) {
   e.preventDefault();
 });
 
-//Mobile menu class toggle
-$('.nav-icon').click(function() {
-  $(this).toggleClass('open');
-  $('.nav--mobile').toggleClass('nav--mobile--open');
+
+// Navigation dropdown class on hover
+
+$('.nav__dropdown').hover(function () {
+  $(this).toggleClass('nav__dropdown--active');
 });
 
-$(window).on('resize', function() {
-  var win = $(this);
-  if (win.width() > 992) {
-    if ($(".nav--mobile").hasClass("nav--mobile--open")) {
-      $(".nav--mobile").removeClass("nav--mobile--open");
-    }
-  }
+
+// Mobile menu class toggle
+
+$('.nav-icon').click(function() {
+  $(this).toggleClass('open');
+  $('.nav--mobile').toggleClass('nav--mobile-active');
 });
+
+
+// Navigation mobile
 
 $('.btn-search').click(function() {
   $('.input-wrapper').toggle();
 });
+
+

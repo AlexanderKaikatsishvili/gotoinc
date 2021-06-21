@@ -3,6 +3,12 @@
 
 /* HEADER start */
 
+.logo
+  display: flex
+  justify-content: center
+
+// Navigation styles
+
 .nav
   list-style-type: none
   margin: 0
@@ -16,7 +22,8 @@
   &__list
     float: left
 
-  &__link, .nav__link-drop
+  &__link,
+  .nav__link-dropdown
     display: inline-block
     color: $color-white
     text-align: center
@@ -25,30 +32,30 @@
     font-weight: 600
     font-size: 1.125rem
 
-  .nav__link-dropdown
-    padding: 1rem 2.5rem 1rem 1.3rem
-
   &__list.nav__dropdown
     display: inline-block
 
-  &__list.nav__dropdown a
-    position: relative
+    .nav__link-dropdown
+      padding: 1rem 2.5rem 1rem 1.3rem
+      position: relative
+      &:after
+        content: ""
+        position: absolute
+        right: 1rem
+        top: 50%
+        transform: translateY(-50%) rotate(180deg)
+        width: 0
+        height: 0
+        border-left: 4px solid transparent
+        border-right: 4px solid transparent
+        border-bottom: 4px solid $color-white
 
-    &:after
-      content: ""
-      position: absolute
-      right: 1rem
-      top: 50%
-      transform: translateY(-50%) rotate(180deg)
-      width: 0
-      height: 0
-      border-left: 4px solid transparent
-      border-right: 4px solid transparent
-      border-bottom: 4px solid $color-white
 
-    &:hover
+  .nav__dropdown--active
+    .nav__link-dropdown
       &:after
         transform: translateY(-50%) rotate(0deg)
+        border-bottom: 4px solid $color-malachite
 
 
   .nav__dropdown-content
@@ -60,31 +67,34 @@
     box-shadow: 0 4px 28px rgba(6, 6, 90, 0.06)
     border-radius: 5px
     overflow: hidden
+    .nav__link
+      color: $color-dark-charcoal
+      padding: 1rem 1.3rem
+      text-decoration: none
+      display: block
+      text-align: left
+      font-size: 1rem
 
-  .nav__dropdown-content a
-    color: $color-dark-charcoal
-    padding: 1rem 1.3rem
-    text-decoration: none
-    display: block
-    text-align: left
-    font-size: 1rem
-
-    &:hover
       &:after
         content: none
 
-  .nav__dropdown-content a:hover
-    background-color: $color-cultured
+      &:hover
+        background-color: $color-cultured
+        &:after
+          content: none
 
-  .nav__dropdown:hover .nav__dropdown-content
-    display: block
+  .nav__dropdown:hover
+    .nav__dropdown-content
+      display: block
 
   &--header
-    li a:hover
-      color: $color-malachite
+    .nav__list
+      .nav__link:hover
+        color: $color-malachite
 
-      &:after
-        border-bottom: 4px solid $color-malachite
+  .nav__link-dropdown
+    &--active
+      color: $color-malachite
 
   &--mobile
     display: none
@@ -97,6 +107,9 @@
     z-index: 1000
     flex-direction: column
     align-items: initial
+    .nav__link
+      &:hover
+        background-color: $color-dark-charcoal
 
     .nav__dropdown-content
       position: initial
@@ -109,24 +122,21 @@
       overflow: hidden
       padding-left: 2rem
 
-      a
+      .nav__link
         color: $color-white
 
         &:hover
-          background-color: inherit
+          background-color: $color-dark-charcoal
 
-    &--open
+    &-active
       display: flex
 
-    li.dropdown a
-      position: relative
+      .nav__list.nav__dropdown
+        .nav__link
+          position: relative
 
-      &:after
-        content: none
-
-.logo
-  display: flex
-  justify-content: center
+          &:after
+            content: none
 
 .nav-icon
   width: 40px
@@ -175,6 +185,8 @@
   width: 0%
   left: 50%
 
+// Header styles
+
 .header
   display: flex
   align-items: center
@@ -219,7 +231,6 @@
   z-index: 1500
   border-radius: 5px
   padding: 3rem 2.4rem
-
 
 .input-search
   width: 200px
@@ -736,6 +747,11 @@
   .nav--header
     display: none
 
+  .nav--mobile
+    .nav__link
+      width: 100%
+      text-align: left
+
   .nav-icon
     display: block
 
@@ -782,6 +798,11 @@
       width: 100%
       margin: .5rem 0
 
+  .header-right
+    display: none
+
 @media (max-width: 360px)
   .nav--footer
     grid-template-columns: 1fr
+
+
