@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
 
 });
 
-lightGallery(document.getElementById('lightgallery'), {
+lightGallery(document.getElementById('gallery'), {
   plugins: [lgZoom, lgThumbnail],
   speed: 500,
 });
@@ -117,7 +117,7 @@ $('.reviews-slider').slick({
   ]
 });
 
-$('.card-slider').slick({
+$('.plans-slider').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
   arrows: false,
@@ -134,7 +134,8 @@ $('.card-slider').slick({
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        dots: true,
       }
     }
   ]
@@ -164,4 +165,8 @@ $(window).on('resize', function() {
       $(".navigation--mobile").removeClass("navigation--mobile--open");
     }
   }
+});
+
+$('.btn-search').click(function() {
+  $('.input-wrapper').toggle();
 });
