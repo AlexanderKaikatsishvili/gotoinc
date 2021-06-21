@@ -26,17 +26,17 @@ window.addEventListener('load', () => {
 });
 
 
+// AOS animation plugin initialisation
+
+// AOS.init();
+
+
 // Light gallery initialisation
 
 lightGallery(document.getElementById('gallery'), {
   plugins: [lgZoom, lgThumbnail],
   speed: 500,
 });
-
-
-// AOS animation plugin initialisation
-
-AOS.init();
 
 
 // Star rating plugin initialisation
@@ -183,7 +183,7 @@ $('.nav-icon').click(function() {
 });
 
 
-// Navigation mobile
+// Search field
 
 $('.btn-search').click(function() {
   $('.input-wrapper').toggle();
