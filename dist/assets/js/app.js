@@ -26,10 +26,6 @@ window.addEventListener('load', () => {
 });
 
 
-// AOS animation plugin initialisation
-
-// AOS.init();
-
 
 // Light gallery initialisation
 
@@ -156,6 +152,11 @@ $('.plans-slider').slick({
     }
   ]
 });
+
+
+// AOS animation plugin initialisation
+
+AOS.init();
 
 
 // Smooth section scroll
